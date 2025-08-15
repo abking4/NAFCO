@@ -1,0 +1,1512 @@
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.right-empty {
+  width: 100%;
+  border-bottom: solid 2px #163e9b;
+}
+
+.hero-inside {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 5;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-headline {
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-size: 70px;
+  font-weight: 200;
+  color: white;
+  line-height: 65px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.hero-headline.visible {
+  visibility: visible;
+}
+
+.header-headline span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 1;
+}
+
+/* Hero headline animation *
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+ End of headline animation */
+
+.hero-subtext {
+  color: #8eaaff;
+  padding-top: 15px;
+}
+
+.headline {
+    padding-bottom: 10px;
+}
+
+.headline-text span {
+  margin-right: 0.3em;
+}
+
+.headline-text {
+  display: inline-block;
+  font-size: clamp(2rem, 6vw, 5rem); /* Responsive font sizing */
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  max-width: 900px; /* ✅ Prevents it from being too wide */
+  width: 100%;      /* Allows it to shrink responsively */
+  white-space: normal; /* Allows wrapping at natural points */
+}
+
+.preload-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+/* THIS WAS FOR THE OLD HERO HEADLINE TILL I DECIDE TO REMOVE
+
+.lineOne {
+    font-family: 'Gotham', arial, sans-serif;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    font-size: 80px;
+}
+
+.lineTwo {
+    font-family: 'Gotham', arial, sans-serif;
+    font-weight: 900;
+    color: #677BB8;
+    font-size: 80px;
+}
+
+.whiteText {
+    font-family: 'Gotham', arial, sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 80px;
+}
+
+.lineThree {
+    font-family: 'Gotham', arial, sans-serif;
+    font-weight: 900;
+    color: #284195;
+    font-size: 80px;
+}
+
+*/
+
+
+p {
+    font-family: 'Gotham', arial, sans-serif;
+    font-weight: 300;
+    color: white;
+    padding-bottom: 30px;
+    line-height: 25px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;      
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hero-left-wrapper {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 2px #163e9b;
+  height: 70%;
+}
+
+.hero-left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 70%;
+  max-width: 650px;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;     
+  align-items: flex-end;
+  flex: 1;
+  box-sizing: border-box;
+  border-left: solid 2px #163e9b;
+}
+
+.hero-right .container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.hero-right-upper {
+  padding-right: 50px;
+}
+
+
+.hero-right .phone p,
+.hero-right .email p {
+  color: white;
+  font-family: 'Gotham', arial, sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* HERO image slider */
+
+.image-slider {
+  position: relative;
+  width: 600px; /* or a responsive size: e.g., 100%, vw, etc. */
+  height: 400px;
+  overflow: hidden;
+  border-top: solid 2px #163e9b;
+}
+
+.image-slider-wrapper{
+  width: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* or 'cover' if you prefer cropping */
+  object-position: center;
+}
+
+.slider-indicators {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;       
+  gap: 8px;
+  padding-bottom: 40px;              
+}
+
+.slider-indicators .tick {
+  display: inline-block;
+  width: 70px;            /* Adjust length */
+  height: 2px;            /* Thin horizontal line */
+  flex: 0 0 auto;
+  background-color: #677BB8; /* Light blue */
+  margin: 0 4px;          /* Spacing between ticks */
+  transition: background-color 0.3s ease;
+}
+
+.slider-indicators .tick:first-child {
+  margin-left: 0;         /* zero out first margin if needed */
+}
+/* Active tick style */
+.slider-indicators .tick.active {
+  background-color: #ffffff; /* White when active */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =======================
+   Arrow styling start
+   ======================= */
+
+
+.contact-texts {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Arrow styling */
+.arrow {
+  width: 15px;      /* initial arrow length */
+  height: 2px;      /* thickness */
+  background-color: white;
+  position: relative;
+  top: 1px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* Arrowhead */
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid white;     /* stroke top */
+  border-right: 2px solid white;   /* stroke right */
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+
+/* Text styles */
+.hero-right .phone p,
+.hero-right .email p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: 'ChakraPetch', arial, sans-serif;
+  font-weight: 300;
+}
+
+/* When hovering either phone or email, add hovered class to .hero-right to trigger arrow animation and text color */
+.hero-right.hovered .arrow {
+  width: 30px;
+  background-color: #ffffff;
+}
+
+.hero-right.hovered .arrow::after {
+  border-left-color: #ffffff;
+}
+
+/* Hover color for texts */
+.hero-right .phone p:hover,
+.hero-right .email p:hover {
+  color: #a8d0ff;
+}
+
+/* =======================
+   Arrow styling end
+   ======================= */
+
+
+
+.trace-button {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-family: 'Gotham', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: visible; 
+  z-index: 1;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+/* Corner "+" signs */
+.trace-button .corner {
+  position: absolute;
+  color: white;
+  font-size: 1rem;
+  line-height: .5;
+  z-index: 3;
+}
+
+.top-left    { top: -0.25rem; left: -0.25rem; }
+.top-right   { top: -0.25rem; right: -0.25rem; }
+.bottom-right { bottom: -0.25rem; right: -0.25rem; }
+.bottom-left  { bottom: -0.25rem; left: -0.25rem; }
+
+/* Border lines */
+.trace-button .border-line {
+  position: absolute;
+  background: white;
+  z-index: 2;
+  transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease;
+}
+
+.top, .bottom { height: 1px; width: 0; }
+.left, .right { width: 1px; height: 0; }
+
+.top    { top: 0; left: 0; transform-origin: left; }
+.right  { top: 0; right: 0; transform-origin: top; }
+.bottom { bottom: 0; right: 0; transform-origin: right; }
+.left   { bottom: 0; left: 0; transform-origin: bottom; }
+
+.trace-button:hover .top    { width: 100%; }
+.trace-button:hover .right  { height: 100%; }
+.trace-button:hover .bottom { width: 100%;}
+.trace-button:hover .left   { height: 100%;}
+
+/* Gradient CSS styling */
+
+#gradient-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; 
+  pointer-events: none; 
+  width:100%;
+  height:100%;
+  --gradient-color-1: #004094; 
+  --gradient-color-2: #000233; 
+  --gradient-color-3: #000319;  
+  --gradient-color-4: #000000;
+}
+
+/* project portfolio section */
+
+.project-section {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh; /* full screen */
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-top: solid 2px #163e9b;
+}
+
+
+.project-preview {
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off-screen to the left */
+  width: 100%;
+  height: 100%;
+  transition: left 0.5s ease;
+  z-index: 20;
+  pointer-events: none;
+  
+}
+
+.project-preview.show {
+  left: 0; /* Slide into view */
+  pointer-events: none;  
+}
+
+.project-preview.exit {
+  left: -100%; /* Slide back out to left */
+}
+
+.project-preview-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  border-right: solid 2px #163e9b;
+}
+
+.grid-item .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 40; /* above project-preview */
+  pointer-events: auto; /* so hover works on grid-item */
+}
+
+.grid-item.first-row {
+  border-top: none;
+}
+
+.grid-wrapper {
+  flex: 1 1 45%;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  position: relative;
+  overflow: hidden;
+  transform: translateX(-700px);
+  transition: transform 1.5s ease-out;
+  opacity: 1;
+}
+
+.grid-wrapper.slide-in {
+  transform: translateX(0);
+}
+
+/* GRID CONTAINER (left side) */
+.grid-container {
+  background-color: white; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  height: 100%; 
+  width: 100%;
+  border-right: 2px solid #004094; 
+  overflow: hidden;
+}
+
+/* Each box */
+.grid-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  z-index: 10;
+  border-top: 2px solid #004094;
+  border-left: 2px solid #004094;
+  transition: border 0.3s ease;
+}
+
+.grid-item img {
+  width: 80%;
+  height: 80%;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.grid-item.hovered {
+  z-index: 30;
+  border: none;
+}
+.grid-item .overlay {
+  z-index: 40;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border: solid 2px #004094;
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay.even {
+  background-color: #191D49;
+  color: #ffffff;
+}
+
+.overlay.odd {
+  background-color: #677BB8;
+  color: #ffffff;
+}
+
+.grid-item .overlay span {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  font-family: 'ChakraPetch', sans-serif;
+  font-weight: 300;
+}
+
+.grid-item.first-row {
+  border-top: none;
+}
+
+
+
+/* TEXT DESCRIPTION (right side) */
+
+.project-description {
+  flex: 1 1 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0px 0px 0px 70px;
+}
+
+.project-description-inner {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.project-description-inner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-description-inner h2 {
+  font-size: 60px;
+  font-family: 'Gotham', arial, sans-serif;
+  font-weight: 800;
+  color: #163e9b;
+}
+
+.project-description .project-header .black {
+    color: #0D111C !important;
+}
+
+.project-description h3 {
+    font-family: 'ChakraPetch', arial, sans-serif;
+    font-weight: 550;
+    font-size: 30px;
+    padding-bottom: 50px;
+    color: #677BB8;
+}
+
+.project-description p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #6C727F;
+}
+
+.trace-button-lightblue {
+  background-color: #dee6ff;;
+  color: #000000;
+}
+
+.trace-button-lightblue .corner {
+  color: #004094;
+}
+
+.trace-button-lightblue .border-line {
+  background-color: #004094;
+}
+
+.news-wrapper {
+  border-left: 2px solid #004094;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news1 {
+  border-bottom: 2px solid #004094;
+  border-top: 2px solid #004094;
+  padding: 40px;
+}
+
+.news2 {
+  padding: 40px;
+  border-bottom: 2px solid #004094;
+}
+
+.headline-link {
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.headline-link:hover {
+  color: #163e9b;
+}
+
+.publish-date {
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #6C727F;
+  font-weight: 100;
+}
+
+/* looping text Marquee */
+
+.marquee-section {
+  width: 100%;
+  overflow: hidden;
+  background-color: #0D111C; 
+  padding: 20px 0;
+}
+
+.marquee-container {
+  display: flex;
+  white-space: nowrap;
+}
+
+.marquee2-container {
+  width: 100%;
+  overflow: hidden; /* Clip overflow */
+  position: relative;  /* Adjust as needed */
+  white-space: nowrap;
+  padding: 30px 0px;
+}
+
+.marquee-text {
+  display: inline-block;
+  font-size: 100px; 
+  font-weight: 900;
+  font-family: 'Gotham', Arial, sans-serif;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px white;
+  animation: scroll-left 70s linear infinite;
+  color: transparent;
+  will-change: transform;
+}
+
+.marquee-text .highlight { 
+  color: transparent;
+  -webkit-text-stroke: 2px #677BB8; 
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Services Section */
+
+
+.services-section {
+  padding: 90px;
+  background-color: #FFFFFF; 
+  font-family: 'Gotham', Arial, sans-serif;
+  color: black;
+}
+
+.section-heading {
+  color: #677BB8; 
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.service-item {
+  margin-bottom: 30px;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: #163e9b;
+}
+
+/* === FLEX WRAPPER for image + content === */
+.service-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+/* === Dynamic image inserted via JS === */
+.service-content-wrapper img {
+  max-width: 180px;
+  flex-shrink: 0;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  height: 120px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  transform: scale(1.1);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  will-change: transform, opacity;
+}
+
+/* Animate image scale + fade in */
+.image-wrapper.reveal img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Overlays */
+.blue-overlay,
+.light-blue-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(0%);
+}
+
+/* Base blue swipe */
+.blue-overlay {
+  background-color: #163e9b;
+  z-index: 4;
+}
+
+/* Light blue swipe */
+.light-blue-overlay {
+  background-color: #a8b8e0;
+  z-index: 3;
+}
+
+/* Trigger animation on wrapper */
+.image-wrapper.reveal .blue-overlay {
+  animation: swipe-out 0.4s forwards;
+}
+
+.image-wrapper.reveal .light-blue-overlay {
+  animation: swipe-out 0.4s 0.1s forwards;
+}
+
+/* Slide overlay right and fade */
+@keyframes swipe-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+
+/* === NEW: Right side of the flex layout === */
+.content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header: Title + Button in a row */
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+/* Title styling */
+.service-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 550;
+  color: black;
+  font-family: 'ChakraPetch', Arial, sans-serif;
+  flex: 1;
+}
+
+/* Toggle button container (arrow + btn) */
+.toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Description shown below the title/button */
+.service-description {
+  display: none;
+  margin-top: 10px;
+  color: #163e9b !important;
+  line-height: 1.5;
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+
+/* Divider style */
+.divider {
+  color: #163e9b;
+}
+
+/* Arrow icon */
+.arrow {
+  width: 15px;
+  height: 2px;
+  background-color: #677BB8;
+  position: relative;
+  top: 1px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  transform: rotate(0deg);
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #677BB8;
+  border-right: 2px solid #677BB8;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.arrow.rotated {
+  transform: rotate(90deg);
+}
+
+/* Button styling */
+.learn-more-btn {
+  position: relative;
+  background: transparent;
+  border: 2px solid #163e9b;
+  color: #010511;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  z-index: 1;
+}
+
+.learn-more-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #dee6ff;;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.learn-more-btn:hover::before {
+  left: 0;
+}
+
+.learn-more-btn:hover {
+  color: #001f3f;
+}
+
+.learn-more-btn.active {
+  color: white;
+  border-color: #677BB8;
+}
+
+.learn-more-btn.active::before {
+  left: 0;
+}
+
+
+
+
+/* NAFCO Stats Section + Photo Carousel styling */
+
+.stats-carousel-section {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.stats-carousel-wrapper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+
+
+.stats-column {
+  flex: 1;
+  background: #000233;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.heading-container {
+  padding-top: 40px;
+  padding-left: 90px;
+}
+
+.stats-heading {
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  
+}
+
+.stats-headline1 {
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 60px;
+  color: #163e9b;
+}
+
+.stats-headline2, .stats-headline3 {
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 60px;
+  color: transparent;
+  -webkit-text-stroke: 2px #677BB8;
+}
+
+.stats-headline4 {
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 60px;
+  color: #ffffff;
+}
+
+.stats-subhead-container {
+  padding-bottom: 30px;
+}
+
+.stats-subhead {
+  font-size: 25px;
+  margin: 0;
+  color: #ffffff;
+  font-family: 'ChakraPetch';
+  font-weight: 600;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.stat-item:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 1); /* subtle white background */
+  padding: 10px; /* optional: gives the background space to breathe */
+}
+
+
+.stat-line {
+  flex: 1;
+  height: 1px;
+  background-color: #677BB8;
+  margin-right: 1rem;
+}
+
+.stats-column.visible .stat-number {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-column {
+  flex: 1;
+  position: relative;
+}
+
+.carousel-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  position: relative; 
+  height: 100%;
+}
+
+/* Each slide now overlaps using absolute positioning */
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1);
+  transition: transform 0.6s ease, opacity 0.4s ease;
+  z-index: 0;
+}
+
+/* Active slide */
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Outgoing slide scales up slightly and fades out */
+.carousel-slide.zoom-out {
+  transform: scale(1.05);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+  z-index: 2;
+}
+
+/* Incoming slide starts scaled up and invisible */
+.carousel-slide.zoom-in {
+  transform: scale(1.05);
+  opacity: 0;
+  z-index: 3;
+}
+
+/* Animate in the incoming slide */
+.carousel-slide.animate-in {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay with gradient and title/ticks */
+.carousel-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 59px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 5;
+}
+
+.carousel-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel-title {
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: bold;
+  transition: opacity 0.05s ease-in-out;
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-weight: 550;
+}
+
+/* Updated tick styling for full-width bars */
+.carousel-ticks {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.tick {
+  flex: 1;
+  height: 2px;
+  background-color: #aaa;
+  border-radius: 1px;
+  transition: background-color 0.05s ease-in-out;
+}
+
+.tick.active {
+  background-color: #163e9b; /* Custom active color */
+}
+
+.toggle-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.toggle-section div {
+  position: relative;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-weight: 200;
+}
+
+/* Underline effect */
+.toggle-section div::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transform: scaleX(1); /* underline always visible */
+  transform-origin: left;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect: text and line turns blue */
+.toggle-section div:hover {
+  color: #163e9b; /* blue */
+}
+
+.toggle-section div:hover::after {
+  background-color: #163e9b;
+}
+
+
+.heading-container {
+  max-width: 600px;
+}
+
+/* Wrapper that holds the entire row of cards */
+.slider-track-wrapper {
+  display: flex;
+  gap: 30px; /* spacing between cards */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+/* Individual card styles */
+.slider-card1, 
+.slider-card2, 
+.slider-card3, 
+.slider-card4 {
+  height: 280px;
+  background-color: #f3f4f7;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.slider-card1 {
+  background-color: #677BB8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 90px;
+}
+
+.slider-card2 {
+  background-color: #191D49;
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+
+}
+
+.slider-card3 {
+  background-color: #a8b8e0;
+}
+
+.slider-card4 {
+  background-color: #163e9b;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.slider1-container {
+  padding: 30px;
+  height: 100%;
+}
+
+.slider2-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.slider3-container {
+  height: 100%;
+}
+
+.card1-heading-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+.card1-heading1 {
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.card1-divider {
+  width: 100%;
+  height: 9px;
+  background-color: #001f3f;
+  margin-bottom: 20px;
+}
+
+.no-bullets {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'ChakraPetch',Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: 300;
+  justify-content: space-between;
+  height: 120px;
+}
+
+
+.award1-container, 
+.award2-container, 
+.award3-container,
+.award4-container,
+.award5-container {
+  display: flex;
+}
+
+.award-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.award-number {
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  color: white;
+  padding-right: 30px;
+}
+
+.award-title {
+  font-family: 'ChakraPetch',Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  color: white;
+}
+
+.award-project {
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  color: #8eaaff;
+}
+
+.slide3-image {
+  width: 230px;
+  height: auto;
+}
+
+.slide3-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.slide3-title {
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.card3-subhead {
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #001f3f;
+}
+
+.stats-container {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid 1px white;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 1rem;
+  white-space: nowrap;
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stat-description {
+  font-size: 20px;
+  color: #ffffff;
+  white-space: nowrap;
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+/* Optional hover effect */
+
+
+/* Hide scrollbar for a cleaner look */
+.slider-track-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.slider-track-wrapper {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.slider-button {
+  background-color: #000233;
+  color: white;
+  border: solid 2px #163e9b;
+  position: absolute;
+  left: 0;
+  cursor: grab;
+  transform: translateY(-50%);
+  z-index: 2;
+  top: 50%;
+  width: 120px;
+  height: 40px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.button-text {
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-weight: 200;
+}
+
+.button-divider {
+  width: 2px;
+  color: #163e9b;
+  background-color: #163e9b;
+  height: 40px;
+}
+
+.button-arrow-container {
+  padding: 10px;
+}
+
+.slider-button:active {
+  cursor: grabbing;
+  background-color: #eee;
+}
+
+.slider-controls {
+  position: relative;
+  height: 40px;
+  margin: 40px 90px;
+}
+
+#customSliderTrack {
+  scroll-behavior: smooth;
+}
+
+.slider-block {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative; /* For positioning the slider button */
+}
+
+.slider-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: white;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.slider-icon {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.arrow-line {
+  fill: none;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+  stroke-width: 40px;
+}
+

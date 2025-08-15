@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url('../assets/fonts/Gotham-Light-Regular.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../assets/fonts/Gotham-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../assets/fonts/Gotham-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../assets/fonts/Gotham-Black.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ChakraPetch, remapping to nearest standard weights */
+@font-face {
+  font-family: 'ChakraPetch';
+  src: url('../assets/fonts/ChakraPetch-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChakraPetch';
+  src: url('../assets/fonts/ChakraPetch-Medium.woff2') format('woff2');
+  font-weight: 500; /* from 550 */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChakraPetch';
+  src: url('../assets/fonts/ChakraPetch-Regular.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChakraPetch';
+  src: url('../assets/fonts/ChakraPetch-SemiBold.woff2') format('woff2');
+  font-weight: 700; /* from 750 */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ChakraPetch';
+  src: url('../assets/fonts/ChakraPetch-Bold.woff2') format('woff2');
+  font-weight: 800; /* from 850 */
+  font-style: normal;
+  font-display: swap;
+}

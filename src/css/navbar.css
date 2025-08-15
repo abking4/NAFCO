@@ -1,0 +1,267 @@
+/* === Basic Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Navbar === */
+.navbar {
+  position: fixed; /* Changed from relative to fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
+  background: transparent;
+  transition: background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+/* === Underline === */
+.navbar-underline {
+  width: 100%;
+  height: 2px;
+  background-color: #08178a;
+
+}
+
+.logo-button {
+  height: 100%;
+  background-color: white;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid #004094;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.logo-button:hover {
+  background-color: #dee6ff;;
+  box-shadow: inset 0 2px 4px #08178a;
+}
+
+.navbar-underline.scrolled {
+  height: 2px;
+  background-color: #08178a;
+}
+
+/* Animation keyframes */
+@keyframes drawLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* === Navbar Container === */
+.nav-container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  z-index: 1000;
+  transition: padding 0.3s ease;
+}
+
+.nav-right-container {
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  z-index: 1000;
+  transition: padding 0.3s ease;
+}
+
+/* === Shrink + White Scroll Style === */
+.navbar.scrolled {
+  background-color: white;
+  height: 70px;
+}
+
+
+.navbar.scrolled .all-links a {
+  color: #08178a;
+}
+
+.navbar.scrolled .icon-stroke {
+  stroke: #08178a;
+}
+
+.navbar.scrolled .search-form input {
+  color: #08178a;
+  border-color: #08178a;
+}
+
+.navbar.scrolled .search-toggle:hover .search-icon-bg {
+  fill: #cbd4ed;
+}
+
+/* === Logo === */
+.nav-logo {
+  height: 35px;
+  width: auto;
+  overflow: visible;
+  transition: filter 0.5s ease, transform 0.3s ease !important;
+}
+
+.nav-logo:hover {
+  transition: filter 0.4s ease, transform 0.3s ease !important;
+}
+
+/* === Nav Links === */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 40px;
+}
+
+.all-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.all-links a {
+  text-decoration: none;
+  color: #08178a;
+  font-weight: 200;
+  font-size: 18px;
+  font-family: 'Gotham', arial, sans-serif;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+/* === Hover Effect === */
+.all-links a:hover {
+  color: #7E98CB;
+}
+
+.all-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #08178a;
+  transition: width 0.3s ease-in-out;
+}
+
+.all-links a:hover::after {
+  width: 100%;
+}
+
+.nav-divider {
+  border: solid 1px;
+  height: 100%;
+  color: #163e9b;
+}
+
+/* === Search === */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  padding: 0px 50px 0px 30px;
+}
+
+.search-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon {
+  width: 100%;
+  height: auto;
+}
+
+.icon-stroke {
+  fill: none;
+  stroke: #08178a;
+  stroke-width: 40px;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  transition: all 0.3s ease;
+}
+
+.search-icon-bg {
+  fill: transparent;
+  transition: fill 0.3s ease;
+}
+
+.search-toggle:hover .search-icon-bg {
+  fill: #7E98CB;
+}
+
+.icon-close {
+  display: none;
+}
+
+.search-wrapper.active .icon-magnify {
+  display: none;
+}
+
+.search-wrapper.active .icon-close {
+  display: block;
+}
+
+.search-form {
+  opacity: 0;
+  width: 0;
+  height: 42px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid #08178a;
+  background: transparent;
+}
+
+.search-form.dark-border {
+  border-color: #08178a;
+}
+
+.search-form input {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  width: 180px;
+  font-size: 16px;
+  outline: none;
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-weight: 550;
+}
+
+.search-wrapper.active .search-form {
+  opacity: 1;
+  width: auto;
+}
+
+
+

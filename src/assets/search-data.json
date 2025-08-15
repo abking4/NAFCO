@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Home",
+    "url": "/index.html",
+    "keywords": "nafco home landing"
+  },
+  {
+    "title": "About",
+    "url": "/about.html",
+    "keywords": "company history mission"
+  },
+  {
+    "title": "Facilities",
+    "url": "/facilities.html",
+    "keywords": "equipment manufacturing warehouse"
+  },
+  {
+    "title": "Portfolio",
+    "url": "/portfolio.html",
+    "keywords": "projects work examples"
+  },
+  {
+    "title": "News",
+    "url": "/news.html",
+    "keywords": "articles press blog"
+  },
+  {
+    "title": "Contact",
+    "url": "/contact.html",
+    "keywords": "get in touch email phone"
+  }
+]

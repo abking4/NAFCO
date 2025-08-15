@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GSAP Parallax Test</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { height: 100%; overflow-x: hidden; }
+    .parallax-container { position: relative; overflow: hidden; }
+
+    /* Sticky header section under parallax */
+    .header-wrapper {
+      min-height: 100vh;
+      background: skyblue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Tall wrapper so there's space to scroll */
+    .policybody-wrapper {
+      height: 150vh;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Sticky parallax window */
+    .policybody {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background: white;
+      z-index: 3;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Moving content inside */
+    .policybody-inner {
+      width: 80%;
+      padding: 40px;
+      background: lightcoral;
+      font-size: 1.5rem;
+      will-change: transform;
+    }
+
+    .footer {
+      min-height: 100vh;
+      background: lightgreen;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parallax-container">
+
+    <div class="header-wrapper">HEADER SECTION</div>
+
+    <div class="policybody-wrapper">
+      <div class="policybody">
+        <div class="policybody-inner">
+          POLICY CONTENT – Scroll till I move up over the HEADER.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">FOOTER SECTION</div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(".policybody-inner", {
+      yPercent: -100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".policybody-wrapper",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        markers: true
+      }
+    });
+  </script>
+
+</body>
+</html>

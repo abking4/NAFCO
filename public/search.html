@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search | NAFCO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../src/css/search.css" />
+</head>
+<body>
+<canvas id="gradient-canvas" data-transition-in></canvas>
+  <header class="navbar">
+    <div class="nav-container">
+  
+        <a href="/index.html" class="logo-button" id="logobutton">
+          <img src="./assets/logo-dark.svg" class="nav-logo" id="nafco-logo"></img>
+        </a>
+    <div class="nav-right-container">        
+      <nav class="nav-links">
+        <div class="all-links">
+          <a href="/index.html">Home</a>
+          <a href="/about.html">About</a>
+          <a href="/facilities.html">Facilities</a>
+          <a href="/portfolio.html">Portfolio</a>
+          <a href="/news.html">News</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+      </nav>
+
+      <div class="nav-divider"></div>
+
+      <div class="search-wrapper">
+          <form class="search-form" action="./search.html" method="GET">
+          <input type="text" name="q" placeholder="Search..." required />            <svg width="16" height="16" viewBox="0 0 24 24">
+              <polyline points="6 4 17 12 6 20" fill="none" stroke="white" stroke-width="3"/>
+            </svg>
+          </form>
+
+          <button class="search-toggle" aria-label="Toggle search">
+            <svg class="search-icon" viewBox="0 0 598.49 598.49" xmlns="http://www.w3.org/2000/svg">
+              <!-- Outer square -->
+              <rect class="search-icon-bg icon-stroke" x="6.5" y="6.5" width="585.49" height="585.49"/>
+
+              <!-- Magnifying glass -->
+              <g class="icon-magnify">
+                <circle class="icon-stroke" cx="267.56" cy="256.89" r="108.73"/>
+                <line class="icon-stroke" x1="343.08" y1="328.96" x2="450.04" y2="434.61"/>
+              </g>
+
+              <!-- X icon (hidden by default) -->
+              <g class="icon-close">
+                <line class="icon-stroke" x1="180" y1="180" x2="420" y2="420"/>
+                <line class="icon-stroke" x1="420" y1="180" x2="180" y2="420"/>
+              </g>
+
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-underline"></div> <!-- Add this line -->
+  </header>
+    <!--
+    <section class="search-hero">
+        <h1>Search Our Projects</h1>
+        <input type="text" id="search-input" placeholder="Search by keyword or project..." />
+    </section>
+    -->
+    <section id="results-container" class="search-results">
+        <!-- Search results will be injected here by JS -->
+    </section>
+</body>
+
+
+</html>

@@ -1,0 +1,330 @@
+#gradient-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; 
+  pointer-events: none; 
+  width:100%;
+  height:100%;
+  --gradient-color-1: #004094; 
+  --gradient-color-2: #000233; 
+  --gradient-color-3: #000319;  
+  --gradient-color-4: #000000;
+}
+
+.footer-top {
+    display: flex;
+    border-bottom: solid 2px #163e9b;
+}
+
+.footer-logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-right: solid 2px #163e9b;
+    width: 550px;
+    padding-left: 90px;
+    padding-right: 250px;
+    flex: 1;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
+}
+
+.footer-middle {
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.contact-header,
+.location-header,
+.certifications-header,
+.getintouch-header {
+    font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    border-bottom: solid 2px #163e9b;
+}
+
+.contact-column,
+.location-column,
+.certifications-column {
+    border-right: solid 2px #163e9b;
+    width: 25%;
+}
+
+.getintouch-column {
+    width: 25%;
+}
+
+.contact-header {
+    padding-left: 90px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.location-header-copy,
+.certifications-header-copy,
+.getintouch-header-copy {
+    padding: 30px;
+}
+
+.contact-header-copy {
+    padding: 30px 30px 30px 0px;
+}
+
+.contact-column {
+   display: flex;
+   flex-direction: column;
+}
+
+.contact-bullets {
+    color: #8eaaff;
+    font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    padding: 30px 30px 30px 90px;
+}
+
+.contact-item {
+    padding-bottom: 10px;
+}
+
+.linkedin-link {
+  color: #8eaaff;
+  text-decoration: none;
+}
+
+.linkedin-link:hover {
+  color: white;
+}
+
+.location-one {
+    display: flex;
+    padding: 30px 30px 30px 30px;
+}
+
+.location-two {
+    display: flex;
+    padding: 0px 30px 30px 30px;
+}
+
+.location-number {
+    color: #8eaaff;
+    font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+    padding-right: 20px;
+}
+
+.location-one-address,
+.location-two-address {
+    color: #8eaaff;
+    font-family: 'ChakraPetch',Arial, Helvetica, sans-serif;
+    font-weight: 200;
+}
+
+.footer-bottom {
+    border-top: solid 2px #163e9b;
+}
+
+.footer-bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 90px;
+}
+
+.rights-reserved {
+    font-family: 'Gotham', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    color: #8eaaff;
+}
+
+.footer-bottom-right {
+    color: #8eaaff;
+    font-family: 'Gotham', Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.privacy-policy {
+    padding-right: 40px;
+}
+
+.certifications-bullets {
+    color: #8eaaff;
+    font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
+
+.certifications-item {
+    padding-bottom: 10px;
+}
+
+.getintouch-bottom {
+    padding: 30px;
+}
+
+.line-one {
+    font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    color: #8eaaff;
+}
+
+.getintouch-message {
+    font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    color: #8eaaff;
+    margin-top: 10px;
+}
+
+.footer-form-container {
+  margin-top: 10px;
+  max-width: 200px;
+}
+
+.footer-form {
+  display: flex;
+  align-items: center;
+  border: 2px solid #163e9b;
+  background-color: transparent;
+  height: 42px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+}
+
+.footer-input {
+  background: transparent;
+  border: none;
+  color: #8eaaff;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  font-family: 'ChakraPetch', Arial, Helvetica, sans-serif;
+  font-weight: 550;
+}
+
+/* Button reset & styling */
+.footer-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-left: 2px solid #163e9b;
+  height: 100%;
+  width: 60px; /* adjust as needed for spacing */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0;
+}
+
+/* Optional hover background or lighten border */
+.footer-submit:hover {
+  background-color: #8eaaff;
+}
+
+/* Arrow SVG */
+.arrow-svg {
+  width: 18px;
+  height: 18px;
+  stroke: white;
+  fill: none;
+  stroke-width: 25px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.3s ease;
+}
+
+.footer-submit:hover .arrow-svg {
+  stroke: #7E98CB;
+}
+
+.footer-link {
+  color: #8eaaff;
+  font-family: 'Gotham', Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+  text-decoration: none;
+  margin-right: 40px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-link:last-child {
+  margin-right: 0;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: #8eaaff;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* looping text Marquee */
+
+
+
+.footer-marquee-container {
+  width: 100%;
+  overflow: hidden; /* Clip overflow */
+  position: relative;  /* Adjust as needed */
+  white-space: nowrap;
+  padding: 30px 0px;
+}
+
+.footer-marquee {
+  display: inline-block;
+  font-size: 100px; 
+  font-weight: 900;
+  font-family: 'Gotham', Arial, sans-serif;
+  font-style: uppercase;
+  -webkit-text-stroke: 2px white;
+  animation: scroll-left 70s linear infinite;
+  color: transparent;
+}
+
+.footer-marquee .highlight { 
+  color: transparent;
+  -webkit-text-stroke: 2px #677BB8; 
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
