@@ -17,124 +17,83 @@ export async function initNavbar() {
 
   const logoContainer = document.querySelector(".logo-button");
   const searchWrapper = document.querySelector('.search-wrapper');
-  const searchToggle = document.querySelector('.search-toggle');
+  const navIconToggle = document.querySelector('.nav-icon-toggle');
   const searchInput = searchWrapper?.querySelector('input');
   const underline = document.querySelector('.navbar-underline');
   const navbar = document.querySelector('.navbar');
   const logoButton = document.querySelector('.logo-button');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const iconSvg = navIconToggle.querySelector('.nav-icon-svg');
 
-  console.log('logoContainer:', logoContainer);
-  console.log('logoButton:', logoButton);
+  let mobileMenuOpen = false;
+  let currentLogo = 'dark';
 
-  let currentLogo = 'dark'; // Initial state (starts with dark logo)
-
-  // Load and inject SVG logo
   async function loadLogo(url) {
-    console.log('Loading logo:', url);
-    if (!logoContainer) {
-      console.warn('No logo container found!');
-      return;
-    }
-
     try {
       const response = await fetch(url);
-      if (!response.ok) {
-        console.error('Fetch failed:', response.status, response.statusText);
-        throw new Error('Network response was not ok');
-      }
-
+      if (!response.ok) throw new Error('Network response was not ok');
       const svgText = await response.text();
-      console.log('SVG text loaded (first 100 chars):', svgText.substring(0, 100));
-
       const parser = new DOMParser();
       const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
       const svg = svgDoc.querySelector("svg");
-      if (!svg) {
-        throw new Error("SVG not found in file");
-      }
+      if (!svg) throw new Error("SVG not found");
 
       logoContainer.innerHTML = "";
       logoContainer.appendChild(svg);
 
       svg.classList.add("nav-logo");
-      svg.style.height = "35px";
-      svg.style.width = "auto";
-      svg.style.transition = "filter 0.3s ease";
       svg.setAttribute("overflow", "visible");
-
-      // Removed glow filter and event listeners per your request
-
     } catch (error) {
       console.error("Logo loading failed:", error);
     }
   }
 
-  // Initial load - always dark logo
+  // Load initial dark logo
   await loadLogo(logoDarkUrl);
 
-  // Hover behavior - swap logo on mouse enter and leave
+  // Logo hover behavior
   if (logoButton) {
     logoButton.addEventListener("mouseenter", async () => {
-      console.log('logoButton mouseenter');
       if (currentLogo !== 'light') {
-        console.log('Switching logo to light');
         await loadLogo(logoUrl);
         currentLogo = 'light';
-      } else {
-        console.log('Logo already light, no swap needed');
       }
     });
 
     logoButton.addEventListener("mouseleave", async () => {
-      console.log('logoButton mouseleave');
       if (currentLogo !== 'dark') {
-        console.log('Switching logo back to dark');
         await loadLogo(logoDarkUrl);
         currentLogo = 'dark';
-      } else {
-        console.log('Logo already dark, no swap needed');
       }
     });
-  } else {
-    console.warn('No logoButton found to attach hover listeners!');
   }
 
-// GSAP-powered scroll animation for navbar show/hide
-let lastScrollY = window.scrollY;
-let ticking = false;
-let scrollThreshold = 300; // how far down the page before hiding
-let scrollDelta = 10;      // minimum scroll movement before reacting
+  // Scroll behavior
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  const scrollThreshold = 300;
+  const scrollDelta = 10;
 
-function handleScroll() {
-  const currentScroll = window.scrollY;
-  const diff = Math.abs(currentScroll - lastScrollY);
+  function handleScroll() {
+    if (mobileMenuOpen) return; // Don't hide/show navbar when mobile menu is open
 
-  if (diff < scrollDelta) {
-    // If scroll movement is too small, do nothing
+    const currentScroll = window.scrollY;
+    const diff = Math.abs(currentScroll - lastScrollY);
+
+    if (diff < scrollDelta) {
+      ticking = false;
+      return;
+    }
+
+    if (currentScroll > lastScrollY && currentScroll > scrollThreshold) {
+      gsap.to(navbar, { y: "-100%", duration: 1, ease: "power3.out" });
+    } else if (currentScroll < lastScrollY) {
+      gsap.to(navbar, { y: "0%", duration: 1, ease: "power3.out" });
+    }
+
+    lastScrollY = currentScroll;
     ticking = false;
-    return;
   }
-
-  if (currentScroll > lastScrollY && currentScroll > scrollThreshold) {
-    // Scrolling down
-    gsap.to(navbar, {
-      y: "-100%",
-      duration: 1,
-      ease: "power3.out"
-    });
-  } else if (currentScroll < lastScrollY) {
-    // Scrolling up
-    gsap.to(navbar, {
-      y: "0%",
-      duration: 1,
-      ease: "power3.out"
-    });
-  }
-
-  lastScrollY = currentScroll;
-  ticking = false;
-}
-
 
   window.addEventListener('scroll', () => {
     if (!ticking) {
@@ -143,10 +102,10 @@ function handleScroll() {
     }
   });
 
-  // Initialize navbar position on page load
+  // Set nav visible on load
   gsap.set(navbar, { y: 0 });
 
-  // Optional: Search bar functionality (if needed)
+  // Clear search input on load/visibility change
   function clearSearchInput() {
     if (searchInput) searchInput.value = '';
     if (searchWrapper) searchWrapper.classList.remove('active');
@@ -158,16 +117,137 @@ function handleScroll() {
     if (document.visibilityState === 'visible') clearSearchInput();
   });
 
-  if (searchToggle && searchWrapper && searchInput) {
-    searchToggle.addEventListener('click', () => {
-      const isActive = searchWrapper.classList.contains('active');
-      console.log('Search toggle clicked, was active?', isActive);
-      searchWrapper.classList.toggle('active');
-      if (!isActive) {
-        searchInput.focus();
+  // === NAV ICON TOGGLE LOGIC ===
+  if (navIconToggle && searchWrapper && searchInput && mobileMenu) {
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      document.body.classList.add('no-scroll');
+      iconSvg.querySelector('.icon-hamburger').style.display = 'none';
+      iconSvg.querySelector('.icon-close').style.display = 'block';
+      iconSvg.querySelector('.icon-magnify').style.display = 'none';
+      mobileMenuOpen = true;
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+      iconSvg.querySelector('.icon-close').style.display = 'none';
+      iconSvg.querySelector('.icon-hamburger').style.display = 'block';
+      iconSvg.querySelector('.icon-magnify').style.display = 'none'; // Magnify hidden in mobile mode
+      mobileMenuOpen = false;
+    }
+
+    function showSearchIcon() {
+      iconSvg.querySelector('.icon-close').style.display = 'none';
+      iconSvg.querySelector('.icon-hamburger').style.display = 'none';
+      iconSvg.querySelector('.icon-magnify').style.display = 'block';
+    }
+
+    // Initialize icons based on screen size
+    function updateIconsOnResize() {
+      const isMobile = window.innerWidth <= 1080;
+
+      if (isMobile) {
+        if (mobileMenuOpen) {
+          openMobileMenu();
+        } else {
+          closeMobileMenu();
+        }
+      } else {
+        // Desktop: show search icon only, close mobile menu if open
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        mobileMenuOpen = false;
+        showSearchIcon();
+      }
+    }
+
+    // Run on load
+    updateIconsOnResize();
+
+    navIconToggle.addEventListener('click', () => {
+      const isMobile = window.innerWidth <= 1080;
+
+      if (isMobile) {
+        if (mobileMenuOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      } else {
+        // Desktop: toggle search bar
+        const isActive = searchWrapper.classList.contains('active');
+        searchWrapper.classList.toggle('active');
+        if (!isActive) searchInput.focus();
       }
     });
+
+    window.addEventListener('resize', () => {
+      updateIconsOnResize();
+    });
   } else {
-    console.warn('Search toggle, wrapper, or input not found');
+    console.warn('Missing one of: navIconToggle, searchWrapper, searchInput, or mobileMenu');
   }
 }
+
+
+
+
+// mobile menu image animation
+
+const images = document.querySelectorAll(".mobile-menu-image-mask img");
+const total = images.length;
+const maskDuration = 2; // time it takes for each mask animation
+const holdDuration = 2; // how long each image stays fully visible before next starts
+
+// Initialize images: first visible, rest hidden
+gsap.set(images[0], { clipPath: "inset(0 0% 0 0)", zIndex: total });
+for (let i = 1; i < total; i++) {
+  gsap.set(images[i], { clipPath: "inset(0 100% 0 0)", zIndex: total - i });
+}
+
+function animateMaskedSlider() {
+  const tl = gsap.timeline({ repeat: -1, defaults: { ease: "power2.inOut" } });
+
+  for (let i = 1; i < total; i++) {
+    const img = images[i];
+
+    tl.to(img, {
+      clipPath: "inset(0 0% 0 0)", // mask in left → right
+      duration: maskDuration,
+      onStart: () => {
+        gsap.set(img, { zIndex: total });
+        for (let j = 0; j < i; j++) {
+          gsap.set(images[j], { zIndex: total - (i - j) });
+        }
+      }
+    });
+
+    // Hold the image fully visible before next starts
+    tl.to({}, { duration: holdDuration });
+  }
+
+  // Last image masks out right → left
+  tl.to(images[total - 1], {
+    clipPath: "inset(0 0 0 100%)", // right → left
+    duration: maskDuration,
+    onStart: () => {
+      gsap.set(images[0], { zIndex: total }); // first image back on top for next cycle
+    }
+  });
+
+  // Optional: hold first image for a moment before looping
+  tl.to({}, { duration: holdDuration });
+}
+
+animateMaskedSlider();
+
+
+
+
+
+
+
+
+
+

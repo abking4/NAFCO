@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Nafco Steel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/src/css/fonts.css" />
 </head>
 <body>
@@ -30,20 +31,27 @@
 
       <div class="search-wrapper">
           <form class="search-form" action="./search.html" method="GET">
-          <input type="text" name="q" placeholder="Search..." required />            <svg width="16" height="16" viewBox="0 0 24 24">
+            <input type="text" name="q" placeholder="Search..." required />
+            <svg width="16" height="16" viewBox="0 0 24 24">
               <polyline points="6 4 17 12 6 20" fill="none" stroke="white" stroke-width="3"/>
             </svg>
           </form>
-
-          <button class="search-toggle" aria-label="Toggle search">
-            <svg class="search-icon" viewBox="0 0 598.49 598.49" xmlns="http://www.w3.org/2000/svg">
+          <button class="nav-icon-toggle" aria-label="Toggle navigation menu">
+            <svg class="nav-icon-svg" viewBox="0 0 598.49 598.49" xmlns="http://www.w3.org/2000/svg">
               <!-- Outer square -->
-              <rect class="search-icon-bg icon-stroke" x="6.5" y="6.5" width="585.49" height="585.49"/>
+              <rect class="icon-bg" x="6.5" y="6.5" width="585.49" height="585.49"/>
 
-              <!-- Magnifying glass -->
+              <!-- Magnifying glass (desktop) -->
               <g class="icon-magnify">
                 <circle class="icon-stroke" cx="267.56" cy="256.89" r="108.73"/>
                 <line class="icon-stroke" x1="343.08" y1="328.96" x2="450.04" y2="434.61"/>
+              </g>
+
+              <!-- Hamburger (mobile) -->
+              <g class="icon-hamburger">
+                <rect class="icon-stroke" x="150" y="180" width="300" height="5"/>
+                <rect class="icon-stroke" x="150" y="280" width="300" height="5"/>
+                <rect class="icon-stroke" x="150" y="380" width="300" height="5"/>
               </g>
 
               <!-- X icon (hidden by default) -->
@@ -54,10 +62,52 @@
 
             </svg>
           </button>
+
         </div>
       </div>
     </div>
-    <div class="navbar-underline"></div> <!-- Add this line -->
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-top">
+        <nav class="mobile-nav-links">
+          <a href="/index.html"><span class="menu-number">01 - </span> Home</a>
+          <a href="/about.html"><span class="menu-number">02 - </span> About</a>
+          <a href="/facilities.html"><span class="menu-number">03 - </span> Facilities</a>
+          <a href="/portfolio.html"><span class="menu-number">04 - </span> Portfolio</a>
+          <a href="/news.html"><span class="menu-number">05 - </span> News</a>
+          <a href="/contact.html"><span class="menu-number">06 - </span> Contact</a>
+        </nav>
+
+        <div class="vertical-marquee-container">
+          <div class="vertical-marquee-text">
+            <span>Let’s build something together — Let’s build something together —</span>
+            <span>Let’s build something together — Let’s build something together —</span>
+            <span>Let’s build something together — Let’s build something together —</span>
+            <span>Let’s build something together — Let’s build something together —</span>
+            <span>Let’s build something together — Let’s build something together —</span>
+          </div>
+        </div>
+      </div>
+
+       <div class="mobile-menu-image">
+        <div class="mobile-menu-image-mask">
+          <img src="../src/assets/images/webready/project1b.jpg" alt="Decorative menu image" />
+          <img src="../src/assets/images/webready/project2.jpg" alt="Decorative menu image" />
+          <img src="../src/assets/images/webready/project9.jpg" alt="Decorative menu image" />
+          <img src="../src/assets/images/webready/project3b.jpg" alt="Decorative menu image" />
+        </div>
+      </div>
+
+      <div class="mobile-menu-footer">
+          <a href="/privacypolicy.html" class="mobile-footer-link" target="_blank">Privacy Policy</a>
+          <a href="/termsandconditions.html" class="mobile-footer-link" target="_blank">Terms and Conditions</a>
+      </div>
+      
+    </div>
+
+
+     <!-- Add this line -->
   </header>
 
   <!-- Placeholder for hero section -->
@@ -80,7 +130,7 @@
           <div class="hero-left-content">
             <div class="headline">
               <div class="hero-headline">
-                  We put the mettle in steel fabrication
+                We put the mettle in steel fabrication
                   <!-- OLD HERO HEADLINE
                   <span class="lineOne">WE PUT THE </span>
                   <span class="lineTwo">METTLE </span> 
@@ -182,40 +232,49 @@
       <!-- Repeat grid-item 18 times or use JS to generate -->
     </div>
   </div>
+
+  <div class="project-description-right-wrapper">
+
   <div class="project-description">
     <div class="project-description-inner">
-      <div class="project-header">
-        <h2>FABRICATING</h2>
-        <h2 style="color: black;">GREATNESS</h2>
-      </div>
-      <h3>What it truly takes to do what we do.</h3>
-      <p>There’s a lot more to structural steel fabrication than designing, detailing, cutting, drilling, and welding. The true test of any fabricator is in its ability to deliver projects on time, within budget, and to spec—over and over and over again.</p>
-      <p>For 70 years, North Alabama Fabricating Company (NAFCO) has been doing just that. In the beginning, we specialized in structural detailing, but have since proved our mettle in engineering, fabrication and erection of structural steel of all kinds. Power plants, commercial buildings, hangars, material handling, or warehouses– NAFCO continues to deliver!</p>
-      <a href="./portfolio.html" class="trace-button trace-button-lightblue">
-        More Projects
-        <!-- Corner "+" signs -->
-        <span class="corner top-left">+</span>
-        <span class="corner top-right">+</span>
-        <span class="corner bottom-right">+</span>
-        <span class="corner bottom-left">+</span>
+      <div class="project-inner-wrapper">
+        <div class="project-header">
+          <h2>FABRICATING</h2>
+          <h2 style="color: black;">GREATNESS</h2>
+        </div>
+        <div class="project-subhead">
+          <h3>What it truly takes to do what we do.</h3>
+        </div>
+        <p>There’s a lot more to structural steel fabrication than designing, detailing, cutting, drilling, and welding. The true test of any fabricator is in its ability to deliver projects on time, within budget, and to spec—over and over and over again.</p>
+        <p>There’s a lot more to structural steel fabrication than designing, detailing, cutting, drilling, and welding. The true test of any fabricator is in its ability to deliver projects on time, within budget, and to spec—over and over and over again.</p>
+        
+        <a href="./portfolio.html" class="trace-button trace-button-lightblue">
+          More Projects
+          <!-- Corner "+" signs -->
+          <span class="corner top-left">+</span>
+          <span class="corner top-right">+</span>
+          <span class="corner bottom-right">+</span>
+          <span class="corner bottom-left">+</span>
 
-        <!-- Border segments -->
-        <span class="border-line top"></span>
-        <span class="border-line right"></span>
-        <span class="border-line bottom"></span>
-        <span class="border-line left"></span>
-      </a>
+          <!-- Border segments -->
+          <span class="border-line top"></span>
+          <span class="border-line right"></span>
+          <span class="border-line bottom"></span>
+          <span class="border-line left"></span>
+        </a>
+      </div>
     </div>
     <div class="news-wrapper">
       
       <div class="news1">
-        <div class="headline">
-          <a href="#" class="headline-link">
-            modern healthcare names NAFCO the nations top general contractor for healthcare construction
-          </a>
+        <div class="news-inner">
+          <div class="headline">
+            <a href="#" class="headline-link">
+              modern healthcare names NAFCO the nations top general contractor for healthcare construction
+            </a>
+          </div>
+          <div class="publish-date">June 17, 2025 </div>
         </div>
-
-        <div class="publish-date">June 17, 2025 </div>
       </div>
       <div class="news2">
         <div class="headline">
@@ -227,6 +286,66 @@
       </div>
     </div>
   </div>
+
+  <div class="history-wrapper">
+
+    <div class="history-upper-wrapper">
+      
+      <div class="history-image-wrapper">
+        <img class="history-image" src="../src/assets/images/webready/history.jpg"/>
+      </div>
+
+
+
+    </div>
+
+    <div class="under-image-wrapper">  
+      <div class="history-copy-wrapper">
+        <div class="history-title">History Worth Retelling</div>
+        <div class="date-heading">June 17, 2025</div>
+        <div class="history-copy">
+          There’s a lot more to structural steel fabrication than designing, detailing, cutting, drilling, and welding. 
+          The true test of any fabricator is in its ability to deliver projects on time, within budget, and to spec—over 
+          and over and over again.
+        </div>
+      </div>
+
+      <div class="history-nav-wrapper">
+        <div class="history-nav-top">
+          <div class="history-leftarrow">
+              <button class="actual-arrow">
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.48 29.04">
+                    <defs><style>.d{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><g id="a"/><g id="b"><g id="c"><polyline class="d" points="15.23 .71 1.41 14.52 15.23 28.33"/><line class="d" x1="60.48" y1="14.65" x2="2.88" y2="14.65"/></g></g>
+                  </svg>
+              </button>
+          </div>
+          <div class="arrow-divider"></div>
+          <div class="history-rightarrow">
+            <button class="actual-arrow">
+              <?xml version="1.0" encoding="UTF-8"?>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.48 29.04">
+                  <defs><style>.d{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><g id="a"/><g id="b"><g id="c"><polyline class="d" points="45.26 .71 59.07 14.52 45.26 28.33"/><line class="d" y1="14.65" x2="57.6" y2="14.65"/></g></g>
+                </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="history-year-wrapper">
+          <div class="history-year">1992</div>
+          <div class="history-year">1984</div>
+          <div class="history-year">1971</div>
+          <div class="history-year">1969</div>
+          <div class="history-year">1960</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+
 </section>
 
 <section class="marquee-section">
@@ -272,7 +391,7 @@
     <div class="service-content-wrapper">
       <div class="content-right">
         <div class="service-header">
-          <h3 class="service-title">Preconstruction and Design-Assist Services</h3>
+          <h3 class="service-title">Preconstruction & Design Services</h3>
           <div class="toggle-button">
             <span class="arrow"></span>
             <button class="learn-more-btn" data-image="../src/assets/images/webready/thumbnail2.jpg">Learn More</button>
