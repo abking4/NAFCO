@@ -25,6 +25,7 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    publicPath: "/NAFCO/"
   },
 
   devtool: isProduction ? "source-map" : "eval-source-map",

@@ -207,7 +207,8 @@ p {
   color: white;
   font-family: 'Gotham', arial, sans-serif;
   font-weight: 300;
-  margin: 0;
+  margin: 0;     
+  text-decoration: none;
 }
 
 /* HERO image slider */
@@ -493,7 +494,7 @@ p {
     font-size: 70px;
   }
   .marquee2-container {
-    margin-top: 23%;
+    margin-top: 19%;
     padding: 10px 0px !important;
   }
   .hero-left-wrapper {
