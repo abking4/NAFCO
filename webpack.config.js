@@ -25,7 +25,7 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: "/NAFCO/"
+    publicPath: isProduction ? "/NAFCO/" : "/", // ✅ dynamic publicPath
   },
 
   devtool: isProduction ? "source-map" : "eval-source-map",
@@ -54,6 +54,8 @@ module.exports = {
       chunks: ["main"],
       inject: "body",
       favicon: "./src/assets/favicon.ico", 
+      scriptLoading: "defer",
+
     }),
     new HtmlWebpackPlugin({
       filename: "search.html",
@@ -61,6 +63,8 @@ module.exports = {
       chunks: ["search"],
       inject: "body",
       favicon: "./src/assets/favicon.ico", 
+      scriptLoading: "defer",
+
     }),
     new HtmlWebpackPlugin({
     filename: "about.html",
@@ -68,6 +72,7 @@ module.exports = {
     chunks: ["about"],
     inject: "body",
     favicon: "./src/assets/favicon.ico",
+    scriptLoading: "defer",
     }),
     new HtmlWebpackPlugin({
     filename: "facilities.html",
@@ -75,6 +80,7 @@ module.exports = {
     chunks: ["facilities"],
     inject: "body",
     favicon: "./src/assets/favicon.ico",
+    scriptLoading: "defer",
     }),
     new HtmlWebpackPlugin({
     filename: "portfolio.html",
@@ -82,6 +88,7 @@ module.exports = {
     chunks: ["portfolio"],
     inject: "body",
     favicon: "./src/assets/favicon.ico",
+    scriptLoading: "defer",
     }),
     new HtmlWebpackPlugin({
     filename: "news.html",
@@ -89,6 +96,7 @@ module.exports = {
     chunks: ["news"],
     inject: "body",
     favicon: "./src/assets/favicon.ico",
+    scriptLoading: "defer",
     }),
     new HtmlWebpackPlugin({
     filename: "contact.html",
@@ -96,6 +104,7 @@ module.exports = {
     chunks: ["contact"],
     inject: "body",
     favicon: "./src/assets/favicon.ico",
+    scriptLoading: "defer",
     }),
     new HtmlWebpackPlugin({
     filename: "privacypolicy.html",
@@ -103,6 +112,7 @@ module.exports = {
     chunks: ["privacypolicy"],
     inject: "body",
     favicon: "./src/assets/favicon.ico",
+    scriptLoading: "defer",
     }),
     new HtmlWebpackPlugin({
     filename: "termsandconditions.html",
@@ -110,6 +120,7 @@ module.exports = {
     chunks: ["termsandconditions"],
     inject: "body",
     favicon: "./src/assets/favicon.ico",
+    scriptLoading: "defer",
     }),
     new PreloadWebpackPlugin({
     rel: 'preload',
